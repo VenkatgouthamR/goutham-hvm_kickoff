@@ -9,5 +9,9 @@ public class Main {
 		transformer.voltageLevel = 15;
 		reactor.voltageLevel = 10;
 		System.out.println("Transformer.voltageLevel :" + transformer.voltageLevel);
+		HighVoltageCircuitBreaker hvcb = new HighVoltageCircuitBreaker(LocalDate.of(2002, 05, 05),1350);
+		hvcb.isActivated();
+		HighVoltageCircuitBreaker highVoltageCB = new HighVoltageCircuitBreaker(LocalDate.of(2002, 05, 05),1200);
+		highVoltageCB.isActivated();
 	}
 }
