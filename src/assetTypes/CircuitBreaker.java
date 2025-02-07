@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public abstract class CircuitBreaker extends Asset{
 
-	public boolean protectionDevice;
+	private boolean protectionDevice;
 	public CircuitBreaker(LocalDate installDate) {
 		super(installDate);
 	}
@@ -15,6 +15,10 @@ public abstract class CircuitBreaker extends Asset{
 	
 	public void deActivate() {
 		protectionDevice = false;
+	}
+	
+	public boolean isProtectionDevice() {
+		return protectionDevice;
 	}
 	
 	public void isActivated() {

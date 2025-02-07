@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class HighVoltageCircuitBreaker extends CircuitBreaker{
 
-	public Integer ratePower;
+	private Integer ratePower;
 	public HighVoltageCircuitBreaker(LocalDate installDate,Integer ratePower) {
 		super(installDate);
 		this.ratePower = ratePower;
@@ -12,7 +12,7 @@ public class HighVoltageCircuitBreaker extends CircuitBreaker{
 			deActivate();
 		}
 		else {
-			if(!protectionDevice) {
+			if(!isProtectionDevice()) {
 				activate();
 			}
 		}
@@ -24,5 +24,13 @@ public class HighVoltageCircuitBreaker extends CircuitBreaker{
 	@Override
 	public String getType() {
 		return null;
-	}	
+	}
+	public Integer getRatePower() {
+		return ratePower;
+	}
+	public void setRatePower(Integer ratePower) {
+		this.ratePower = ratePower;
+	}
+	
+	
 }
